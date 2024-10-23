@@ -1,0 +1,288 @@
+﻿Code,Organizations,ProblemDate,DateOfReturn,ReportedDate,BodyPart,AffectedArea,Side,InjuryType,BodyPartName,CurrentStatus
+FB64,Football,8/10/2023,-,8/15/2023,Shoulder,Upper Extremity,Left,Other Shoulder Injury,,Not Cleared
+FB29,Football,8/11/2023,-,8/15/2023,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Limited Activity
+FB74,Football,8/12/2023,-,8/15/2023,Elbow,Upper Extremity,Right,Entrapment Neuropathy (javelin elbow),,Limited Activity
+FB46,Football,8/14/2023,-,8/26/2023,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Limited Activity
+FB24,Football,8/17/2023,-,8/26/2023,Knee,Lower Extremity,Right,Sprain,Anterior Cruciate Ligament,Not Cleared
+VB13,Volleyball,8/18/2023,8/18/2023,8/23/2023,Wrist,Upper Extremity,Left,Triangular Fibrocartilage Complex Tear,,Returned To Play As Tolerated
+WSOC6,Womens Soccer,8/18/2023,-,9/13/2023,Knee,Lower Extremity,Left,Other Knee Injury,,Limited Activity
+MSCO7,Men's Soccer,8/19/2023,-,8/23/2023,Hip,Lower Extremity,Left,Strain,Psoas major,Returned To Play and Closed
+FB16,Football,8/20/2023,-,8/26/2023,Shoulder,Upper Extremity,Left,Subluxation,,Returned To Play As Tolerated
+SB2,Softball,8/20/2023,8/19/2023,8/22/2023,Shoulder,Upper Extremity,Right,Strain,General Rotator Cuff,Returned To Play As Tolerated
+WSOC5,Womens Soccer,8/21/2023,8/19/2023,8/21/2023,Ankle,Lower Extremity,Left,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+WSOC23,Womens Soccer,8/23/2023,8/23/2023,8/24/2023,Hip,Lower Extremity,Left,Piriformis Syndrome,Piriformis,Returned To Play and Closed
+WSOC13,Womens Soccer,8/23/2023,-,8/24/2023,Shoulder,Upper Extremity,Right,Subluxation,,Not Cleared
+VB3,Volleyball,8/25/2023,8/24/2023,8/26/2023,Shoulder,Upper Extremity,Left,Subluxation,"Glenohumeral, Posterior",Returned To Play As Tolerated
+WSOC16,Womens Soccer,8/28/2023,-,8/29/2023,Knee,Lower Extremity,Right,Sprain,Anterior Cruciate Ligament,Not Cleared
+MSD27,Men's Swimming & Diving,8/29/2023,8/28/2023,8/31/2023,Shoulder,Upper Extremity,Right,Shoulder pain (finding),,Returned To Play As Tolerated
+WSOC24,Womens Soccer,8/29/2023,8/28/2023,8/31/2023,Thigh,Lower Extremity,Bilateral,Tightness,,Returned To Play and Closed
+WT&F3,Women's Cross Country,8/30/2023,-,9/6/2023,Thigh,Lower Extremity,,Stress Fracture,,Limited Activity
+VB4,Volleyball,8/30/2023,8/30/2023,9/11/2023,Lower Leg,Lower Extremity,Right,Strain,Tibialis Anterior Tendon,Returned To Play and Closed
+MSD19,Men's Swimming & Diving,8/31/2023,8/30/2023,9/13/2023,Hip,Lower Extremity,Bilateral,Tightness,,Returned To Play As Tolerated
+MSOC9,Men's Soccer,9/1/2023,-,9/21/2023,Lower Leg,Lower Extremity,Right,Stress Reaction,,Limited Activity
+FB80,Football,9/2/2023,-,9/20/2023,Knee,Lower Extremity,Left,Rupture,Anterior Cruciate Ligament,Not Cleared
+WF6,Women's Fencing,9/4/2023,-,9/11/2023,Hip,Lower Extremity,Bilateral,Other Hip Injury,,Returned To Play As Tolerated
+WF13,Women's Fencing,9/4/2023,-,9/11/2023,Hip,Lower Extremity,Bilateral,Other Hip Injury,,Returned To Play As Tolerated
+BASEB38,Baseball,9/5/2023,9/8/2023,9/6/2023,Lumbar Spine,Torso,Bilateral,Other Lumbar Injury,,Returned To Play and Closed
+WBB20,Women's Basketball,9/5/2023,-,9/7/2023,Knee,Lower Extremity,Left,Sprain,,Limited Activity
+BASEB28,Baseball,9/5/2023,9/4/2023,9/5/2023,Shoulder,Upper Extremity,Right,Shoulder pain (finding),,Returned To Play As Tolerated
+MT&F18,Men's Cross Country,9/6/2023,-,9/8/2023,Lower Leg,Lower Extremity,Right,Stress Fracture,,Limited Activity
+WBB16,Women's Basketball,9/6/2023,-,9/22/2023,Ankle,Lower Extremity,,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+BASEB29,Baseball,9/6/2023,9/25/2023,9/11/2023,Abdomen,Torso,,Strain,,Returned To Play and Closed
+WF14,Women's Fencing,9/6/2023,-,9/7/2023,Knee,Lower Extremity,Left,Other Knee Injury,,Limited Activity
+BASEB23,Baseball,9/7/2023,-,9/8/2023,Elbow,Upper Extremity,Right,Sprain,Ulnar Collateral Ligament (partial tear),Returned To Play As Tolerated
+VB5,Volleyball,9/9/2023,9/11/2023,9/11/2023,Hip,Lower Extremity,Right,Strain,Iliopsoas,Returned To Play As Tolerated
+FB2,Football,9/9/2023,-,9/11/2023,Ankle,Lower Extremity,Left,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+FB97,Football,9/9/2023,-,9/14/2023,Shoulder,Upper Extremity,Right,Sprain,Acromioclavicular Ligament (III or greater),Returned To Play As Tolerated
+FB105,Football,9/10/2023,-,9/12/2023,Shoulder,Upper Extremity,Left,Strain,General Rotator Cuff,Returned To Play As Tolerated
+WT&F16,Women's Track & Field,9/11/2023,-,9/15/2023,Thigh,Lower Extremity,Right,Strain,Hamstring (partial tear),Limited Activity
+WF10,Women's Fencing,9/11/2023,-,9/11/2023,Knee,Lower Extremity,Left,Other Knee Injury,,Returned To Play As Tolerated
+WT&F23,"Club Sports , Women's Track & Field ",9/11/2023,-,9/12/2023,Thigh,Lower Extremity,Left,Strain,Rectus Femoris,Limited Activity
+G2,Women's Golf,9/11/2023,9/11/2023,9/11/2023,Foot,Lower Extremity,Left,Strain,Plantar Fascia,Returned To Play and Closed
+G4,Men's Golf,9/12/2023,9/12/2023,9/15/2023,Hip,Lower Extremity,Bilateral,Hip pain (finding),,Returned To Play As Tolerated
+MSD37,Men's Swimming & Diving,9/12/2023,9/11/2023,9/13/2023,Lower Back,Torso,Left,Strain,,Returned To Play As Tolerated
+SB8,Softball,9/12/2023,9/11/2023,9/13/2023,Hip,Lower Extremity,Bilateral,Other Hip Injury,,Returned To Play As Tolerated
+BASEB16,Baseball,9/13/2023,9/14/2023,9/14/2023,Ankle,Lower Extremity,Left,Sprain,Anterior Talofibular,Returned To Play and Closed
+MSD10,Men's Swimming & Diving,9/13/2023,-,9/13/2023,Shoulder,Upper Extremity,Bilateral,Spasms,,Returned To Play As Tolerated
+WF16,Women's Fencing,9/14/2023,-,9/14/2023,Hip,Lower Extremity,Bilateral,Other Hip Injury,,Returned To Play and Closed
+WF6,Women's Fencing,9/14/2023,9/14/2023,9/14/2023,Thigh,Lower Extremity,Left,Strain,Vastus Medialis,Returned To Play and Closed
+VB9,Volleyball,9/14/2023,9/15/2023,9/15/2023,Abdomen,Torso,Left,Strain,Internal Oblique,Returned To Play As Tolerated
+MT&F35,Men's Track & Field,9/14/2023,-,9/23/2023,Lumbar Spine,Torso,,Slipped Disc,,Returned To Play As Tolerated
+WF8,Women's Fencing,9/14/2023,-,9/20/2023,Knee,Lower Extremity,Left,Sprain,,Limited Activity
+MT&F39,Men's Track & Field,9/14/2023,-,9/15/2023,Elbow,Upper Extremity,Left,Sprain,Ulnar Collateral Ligament (partial tear),Limited Activity
+WT&F15,Women's Track & Field,9/15/2023,-,9/18/2023,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Limited Activity
+MT&F22,Men's Track & Field,9/15/2023,-,9/18/2023,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Returned To Play and Closed
+WTE6,Women's Tennis,9/16/2023,-,9/18/2023,Abdomen,Torso,Left,Strain,,Returned To Play As Tolerated
+G11,"Club Sports , Men's Golf",9/17/2023,9/18/2023,9/18/2023,Shoulder,Upper Extremity,Left,Inflammation,,Returned To Play and Closed
+G11,"Club Sports , Men's Golf",9/17/2023,9/18/2023,9/18/2023,Elbow,Upper Extremity,Right,Medial Epicondylitis (Golfer's Elbow),,Returned To Play and Closed
+FB81,Football,9/19/2023,-,9/28/2023,Cervical Segment,Neck,,Spasm,,Limited Activity
+G13,Women's Golf,9/21/2023,9/27/2023,9/27/2023,Lower Back,Torso,Bilateral,Chronic back pain (finding),,Limited Activity
+MSD14,Men's Swimming & Diving,9/21/2023,9/20/2023,9/21/2023,Shoulder,Upper Extremity,Left,Thoracic Outlet Syndrome,,Returned To Play As Tolerated
+WF10,Women's Fencing,9/22/2023,-,9/22/2023,Thoracic Spine,Torso,,Other Thoracic Injury,,Returned To Play As Tolerated
+SB11,Softball,9/22/2023,-,9/25/2023,Shoulder,Upper Extremity,Left,Subluxation,"Glenohumeral, Down",Returned To Play As Tolerated
+MT&F10,"Men's Cross Country, Men's Track & Field",9/23/2023,-,9/25/2023,Shoulder,Upper Extremity,Right,Sprain,Acromioclavicular Ligament (I or II),Returned To Play As Tolerated
+FB38,Football,9/23/2023,-,9/27/2023,Thigh,Lower Extremity,Left,Strain,Quadricep (partial tear),Returned To Play As Tolerated
+WSD9,Women's Swimming & Diving,9/24/2023,-,10/1/2023,Upper arm,Upper Extremity,Right,Strain,Triceps Brachii (partial tear),Limited Activity
+BASEB15,Baseball,9/27/2023,9/29/2023,9/28/2023,Lower Back,Torso,Bilateral,Discomfort (finding),,Returned To Play and Closed
+FB76,Football,9/28/2023,-,9/29/2023,Knee,Lower Extremity,Right,Rupture,Anterior Cruciate Ligament,Waiting For Assessment
+WT&F9,Women's Cross Country,9/29/2023,-,10/2/2023,Ankle,Lower Extremity,Right,Sprain,Post. Talofibular,Returned To Play and Closed
+VB5,Volleyball,9/30/2023,10/3/2023,10/2/2023,Knee,Lower Extremity,Right,Knee pain (finding),,Returned To Play As Tolerated
+MSCO8,Men's Soccer,9/30/2023,-,10/3/2023,Lower Leg,Lower Extremity,Right,Sprain,,Limited Activity
+FB29,Football,9/30/2023,-,10/1/2023,Lower Leg,Lower Extremity,Right,Strain,Gastrocsoleus Complex (partial tear),Not Cleared
+WF1,Women's Fencing,10/1/2023,-,10/3/2023,Ankle,Lower Extremity,Right,Sprain,,Returned To Play As Tolerated
+MLAX33,Men's Lacrosse,10/1/2023,-,10/3/2023,Abdomen,Torso,Right,Strain,External Oblique,Returned To Play As Tolerated
+WSQ5,Women's Squash,10/2/2023,-,10/21/2023,Shoulder,Upper Extremity,Right,Scapulothoracic Dysfunction,,Returned To Play As Tolerated
+SB18,Softball,10/2/2023,-,10/2/2023,Hip,Lower Extremity,Right,Other Hip Injury,,Limited Activity
+MSD16,Men's Swimming & Diving,10/3/2023,10/2/2023,10/3/2023,Hip,Lower Extremity,Left,Strain,Iliopsoas,Returned To Play As Tolerated
+MBB7,Mens Basketball,10/3/2023,-,10/4/2023,Ankle,Lower Extremity,Left,Sprain,,Limited Activity
+WSOC18,Womens Soccer,10/7/2023,-,10/9/2023,Ankle,Lower Extremity,Right,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+FB104,Football,10/7/2023,-,10/18/2023,Knee,Lower Extremity,Left,Hyperextension,,Returned To Play As Tolerated
+WF6,Women's Fencing,10/10/2023,-,10/11/2023,Thigh,Lower Extremity,Left,Strain,Adductor Longus,Returned To Play and Closed
+WSOC23,Womens Soccer,10/11/2023,-,10/12/2023,Knee,Lower Extremity,Right,Other Knee Injury,,Not Cleared
+WSD14,Women's Swimming & Diving,10/12/2023,-,10/16/2023,Ankle,Lower Extremity,Right,Sprain,Calcaneofibular,Limited Activity
+FB20,Football,10/14/2023,-,10/16/2023,Knee,Lower Extremity,Left,Subluxation,Patella,Limited Activity
+WBB21,Women's Basketball,10/14/2023,-,10/17/2023,Knee,Lower Extremity,,Sprain,Anterior Cruciate Ligament,Limited Activity
+MSQ7,Men's Squash,10/17/2023,-,10/21/2023,Ankle,Lower Extremity,Right,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+MSD26,Men's Swimming & Diving,10/18/2023,-,10/24/2023,Thigh,Lower Extremity,Left,Strain,General Area,Returned To Play and Closed
+WBB14,Women's Basketball,10/18/2023,-,10/19/2023,Ankle,Lower Extremity,Right,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+FB83,Football,10/22/2023,-,10/24/2023,Shoulder,Upper Extremity,Left,Other Shoulder Injury,,Not Cleared
+MSD24,Men's Swimming & Diving,10/23/2023,10/22/2023,10/23/2023,Ankle,Lower Extremity,Left,Sprain,,Returned To Play As Tolerated
+MSOC24,Men's Soccer,10/24/2023,-,10/25/2023,Hip,Lower Extremity,Right,Strain,Adductor,Limited Activity
+WSD15,Women's Swimming & Diving,10/26/2023,-,10/26/2023,Thigh,Lower Extremity,Right,Strain,Groin,Returned To Play As Tolerated
+WBB4,Women's Basketball,10/30/2023,10/29/2023,10/30/2023,Ankle,Lower Extremity,Left,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+MSD23,Men's Swimming & Diving,10/30/2023,10/29/2023,10/30/2023,Knee,Lower Extremity,Bilateral,Discomfort (finding),,Returned To Play As Tolerated
+G16,Women's Golf,10/31/2023,-,11/1/2023,Knee,Lower Extremity,Left,Knee pain (finding),,Limited Activity
+MBB9,Mens Basketball,11/1/2023,-,11/2/2023,Abdomen,Torso,,Strain,,Not Cleared
+WT&F9,Women's Cross Country,11/16/2023,-,11/16/2023,Hip,Lower Extremity,Left,Strain,Iliopsoas,Limited Activity
+MBB1,Mens Basketball,11/16/2023,-,11/16/2023,Lumbar Spine,Torso,,Other Lumbar Injury,,Not Cleared
+WTE6,Women's Tennis,11/14/2023,-,11/15/2023,Ankle,Lower Extremity,Right,Sprain,Syndesmotic,Not Cleared
+SB10,Softball,11/14/2023,-,11/15/2023,Lower Leg,Lower Extremity,Left,Pain in lower limb (finding),,Limited Activity
+MBB6,Mens Basketball,11/13/2023,-,11/13/2023,Shoulder,Upper Extremity,Left,Subluxation,"Glenohumeral, Down",Limited Activity
+WBB16,Women's Basketball,11/12/2023,11/14/2023,11/14/2023,Hand,Upper Extremity,Right,Sprain,Ligament,Returned To Play As Tolerated
+BASEB23,Baseball,11/10/2023,-,11/10/2023,Thigh,Lower Extremity,Right,Strain,Hamstring (partial tear),Limited Activity
+MSQ7,Men's Squash,11/8/2023,-,11/8/2023,Thigh,Lower Extremity,Right,Strain,,Returned To Play As Tolerated
+WLAX37,Women's Lacrosse,11/6/2023,-,11/7/2023,Knee,Lower Extremity,Right,Other Knee Injury,,Not Cleared
+WSOC14,Womens Soccer,11/2/2023,11/1/2023,11/3/2023,Knee,Lower Extremity,Left,Discomfort (finding),,Returned To Play As Tolerated
+BASEB35,Baseball,12-08-2023,-,,Thigh,Lower Extremity,Right,Strain,Hamstring (partial tear),Limited Activity
+BASEB27,Baseball,11-29-2023,-,,Thigh,Lower Extremity,Left,Strain,Semimembranosus,Returned To Play As Tolerated
+BASEB27,Baseball,11-29-2023,-,,Thigh,Lower Extremity,Left,Strain,Semitendinosus,Returned To Play As Tolerated
+FH9,Field Hockey,12-06-2023,-,,Lower Back,Torso,Right,Strain,,Limited Activity
+FB22,Football,12-15-2023,-,,Knee,Lower Extremity,Left,Sprain,,Not Cleared
+FB44,Football,12-06-2023,-,,Shoulder,Upper Extremity,Left,Strain,Pectoralis Major,Limited Activity
+G1,Men's Golf,12-12-2023,-,,Lower Back,Torso,Bilateral,Strain,,Returned To Play As Tolerated
+MSOC8,Men's Soccer,12-05-2023,-,,Hip,Lower Extremity,,Tightness,,Returned To Play As Tolerated
+MSOC17,Men's Soccer,12-04-2023,-,,Rib,Torso,Bilateral,Other,,Returned To Play As Tolerated
+MSOC6,Men's Soccer,11-29-2023,-,,Lumbar Spine,Torso,Bilateral,Tightness,,Returned To Play As Tolerated
+MSQ11,Men's Squash,12-04-2023,-,,Lower Leg,Lower Extremity,Bilateral,Shin Splints,,Returned To Play As Tolerated
+MSD19,Men's Swimming & Diving,12-07-2023,-,,Shoulder,Upper Extremity,,Shoulder pain (finding),,Returned To Play As Tolerated
+MSD2,Men's Swimming & Diving,12-04-2023,-,,Foot,Lower Extremity,,Stress Fracture,,Returned To Play As Tolerated
+MSD13,Men's Swimming & Diving,12-04-2023,-,,Hip,Lower Extremity,Left,Strain,Adductor,Returned To Play As Tolerated
+MT&F22,Men's Track & Field,12-08-2023,-,,Lower Leg,Lower Extremity,Left,Strain,,Not Cleared
+MT&F43,Men's Track & Field,11-27-2023,-,,Pubic Symphysis,Torso,,Other,,Returned To Play As Tolerated
+WBB12,Women's Basketball,12-19-2023,12-19-2023,,Ankle,Lower Extremity,Left,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+WBB7,Women's Basketball,12-18-2023,-,,Body part,General Medical,Midline,Other,,Returned To Play As Tolerated
+WF11,Women's Fencing,12-08-2023,-,,Thigh,Lower Extremity,Right,Strain,Hamstring (partial tear),Limited Activity
+WF1,Women's Fencing,12-06-2023,-,,Shoulder,Upper Extremity,Bilateral,Other Shoulder Injury,,Returned To Play As Tolerated
+WF6,Women's Fencing,12-06-2023,-,,Hip,Lower Extremity,Right,Tightness,,Limited Activity
+WF2,Women's Fencing,12-01-2023,-,,Wrist,Upper Extremity,Right,Pain in wrist (finding),,Returned To Play As Tolerated
+WF14,Women's Fencing,11-29-2023,-,,Ankle,Lower Extremity,Right,Sprain,Anterior Talofibular,Limited Activity
+G7,Women's Golf,11-30-2023,-,,Shoulder,Upper Extremity,Left,Other Shoulder Injury,,Returned To Play As Tolerated
+WLAX38,Women's Lacrosse,12-04-2023,-,,Hip,Lower Extremity,Left,Tightness,,Returned To Play As Tolerated
+WLAX27,Women's Lacrosse,12-04-2023,-,,Thigh,Lower Extremity,Left,Strain,Semimembranosus,Limited Activity
+WLAX18,Women's Lacrosse,12-01-2023,-,,Lower Leg,Lower Extremity,Bilateral,Other Leg Injury,,Returned To Play As Tolerated
+WSQ1,Women's Squash,12-14-2023,-,,Lower Back,Torso,,Chronic back pain (finding),,Returned To Play As Tolerated
+WSD39,Women's Swimming & Diving,12-12-2023,-,,Lower Back,Torso,Bilateral,Discomfort (finding),,Returned To Play As Tolerated
+WSD29,Women's Swimming & Diving,12-05-2023,-,,Knee,Lower Extremity,Left,Patellofemoral Pain Syndrome (PFPS),,Returned To Play As Tolerated
+WT&F18,Women's Track & Field,12-04-2023,-,,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Limited Activity
+BASEB19,Baseball,01-16-2024,-,,Thigh,Lower Extremity,Right,Strain,Vastus Medialis,Returned To Play As Tolerated
+BASEB7,Baseball,01-10-2024,-,,Elbow,Upper Extremity,Right,Sprain,Ulnar Collateral Ligament (partial tear),Limited Activity
+FH12,Field Hockey,01-29-2024,-,,Thigh,Lower Extremity,Bilateral,Tightness,,Returned To Play As Tolerated
+FB20,Football,01-25-2024,-,,Knee,Lower Extremity,Left,Strain,,Returned To Play As Tolerated
+MT&F17,Men's Cross Country,01-23-2024,-,,Lower Leg,Lower Extremity,Left,Strain,,Limited Activity
+MT&F4,Men's Cross Country,01-06-2024,-,,Knee,Lower Extremity,Left,Tendinitis,Patella Tendon,Returned To Play As Tolerated
+MT&F16,"Men's Cross Country, Men's Track & Field",01-15-2024,-,,Thigh,Lower Extremity,,Strain,,Limited Activity
+G15,Men's Golf,01-23-2024,-,,Lower Back,Torso,Midline,Strain,,Returned To Play As Tolerated
+MLAX41,Men's Lacrosse,01-26-2024,-,,Ankle,Lower Extremity,Left,Strain,Tibialis Posterior,Returned To Play As Tolerated
+MSQ14,Men's Squash,01-27-2024,-,,Lumbar Spine,Torso,,Slipped Disc,,Waiting For Assessment
+MSD37,Men's Swimming & Diving,01-23-2024,-,,Hip,Lower Extremity,Bilateral,Strain,Adductor,Returned To Play As Tolerated
+MSD31,Men's Swimming & Diving,01-23-2024,-,,Shoulder,Upper Extremity,Bilateral,Fatigue (finding),,Returned To Play As Tolerated
+MSD36,Men's Swimming & Diving,01-19-2024,-,,Ankle,Lower Extremity,Left,Tendinosis (finding),,Returned To Play As Tolerated
+MSD15,Men's Swimming & Diving,01-18-2024,-,,Shoulder,Upper Extremity,Right,Shoulder pain (finding),,Returned To Play As Tolerated
+MSD3,Men's Swimming & Diving,01-12-2024,-,,Shoulder,Upper Extremity,,Impingement,,Returned To Play As Tolerated
+MSD27,Men's Swimming & Diving,01-10-2024,-,,Elbow,Upper Extremity,Left,Pain in elbow (finding),,Returned To Play As Tolerated
+MSD39,Men's Swimming & Diving,01-09-2024,-,,Hip,Lower Extremity,Right,Hip pain (finding),,Returned To Play As Tolerated
+MSD9,Men's Swimming & Diving,01-09-2024,-,,Knee,Lower Extremity,Left,Knee pain (finding),,Returned To Play As Tolerated
+MSD32,Men's Swimming & Diving,01-06-2024,-,,Hip,Lower Extremity,Left,Strain,Adductor,Returned To Play As Tolerated
+MTE2,Men's Tennis,01-26-2024,-,,Elbow,Upper Extremity,Right,Epicondylitis,,Returned To Play As Tolerated
+MTE1,Men's Tennis,01-26-2024,-,,Ankle,Lower Extremity,Right,Strain,,Returned To Play As Tolerated
+MTE8,Men's Tennis,01-24-2024,-,,Elbow,Upper Extremity,Right,Epicondylitis,,Limited Activity
+MTE13,Men's Tennis,01-23-2024,-,,Abdomen,Torso,Left,Strain,,Returned To Play As Tolerated
+MT&F44,Men's Track & Field,01-29-2024,-,,Knee,Lower Extremity,Right,Inflammation,,Returned To Play As Tolerated
+MT&F35,Men's Track & Field,01-27-2024,-,,Thigh,Lower Extremity,Right,Strain,,Limited Activity
+MT&F28,Men's Track & Field,01-19-2024,-,,Knee,Lower Extremity,Right,Meniscus Tear,Lateral Meniscus,Limited Activity
+MT&F34,Men's Track & Field,01-14-2024,-,,Hip,Lower Extremity,Left,Strain,Iliopsoas,Limited Activity
+MT&F38,Men's Track & Field,01-13-2024,-,,Thigh,Lower Extremity,,Strain,Biceps Femoris,Limited Activity
+MBB12,Mens Basketball,01-30-2024,-,,Foot,Lower Extremity,Left,Sprain,,Limited Activity
+MBB3,Mens Basketball,01-16-2024,-,,Lumbar Spine,Torso,,Spasm,,Not Cleared
+MBB8,Mens Basketball,01-15-2024,-,,Ankle,Lower Extremity,,Sprain,,Returned To Play and Closed
+SB8,Softball,01-29-2024,-,,Lower Back,Torso,Bilateral,Chronic back pain (finding),,Returned To Play As Tolerated
+SB5,Softball,01-25-2024,-,,Lumbar Spine,Torso,Right,Non-Specific Low Back Pain (mechanical),,Returned To Play As Tolerated
+SB1,Softball,01-15-2024,-,,Knee,Lower Extremity,,Knee pain (finding),,Returned To Play As Tolerated
+WBB1,Women's Basketball,01-27-2024,-,,Knee,Lower Extremity,Left,Sprain,,Returned To Play As Tolerated
+WBB15,Women's Basketball,01-23-2024,-,,Shoulder,Upper Extremity,Right,Multi-directional Instability,,Limited Activity
+WBB8,Women's Basketball,01-15-2024,-,,Knee,Lower Extremity,Left,Other Knee Injury,,Not Cleared
+WBB15,Women's Basketball,01-05-2024,-,,Knee,Lower Extremity,Right,Hyperextension,,Returned To Play As Tolerated
+WT&F11,Women's Cross Country,01-08-2024,-,,Knee,Lower Extremity,Left,Sprain,Medial Collateral Ligament,Returned To Play As Tolerated
+WF15,Women's Fencing,01-15-2024,-,,Thigh,Lower Extremity,Bilateral,Strain,Vastus Medialis,Limited Activity
+WF6,Women's Fencing,01-10-2024,-,,Ankle,Lower Extremity,,Sprain,Anterior Talofibular,Limited Activity
+WTE7,Women's Tennis,01-24-2024,-,,Shoulder,Upper Extremity,Right,Scapulothoracic Dysfunction,,Returned To Play As Tolerated
+WTE1,Women's Tennis,01-19-2024,-,,Wrist,Upper Extremity,,Tendinitis,Extensor Digitorum Communis,Returned To Play As Tolerated
+WTE7,Women's Tennis,01-18-2024,-,,Lower Leg,Lower Extremity,Left,Pain in lower limb (finding),,Returned To Play As Tolerated
+WTE5,Women's Tennis,01-12-2024,-,,Shoulder,Upper Extremity,Right,Glenoid Labrum Tear (SLAP),,Returned To Play and Closed
+WT&F15,Women's Track & Field,01-10-2024,-,,Thigh,Lower Extremity,Left,Strain,,Limited Activity
+FH4,Field Hockey,02-28-2024,-,02-28-2024,Hip,Lower Extremity,Right,Other Hip Injury,,Limited Activity
+WT&F21,"Women's Cross Country, Women's Track & Field",02-27-2024,-,02-27-2024,Brain,Head,,Concussion,,Not Cleared
+FH12,Field Hockey,02-26-2024,-,02-26-2024,Ankle,Lower Extremity,Right,Bursitis,,Limited Activity
+MTE2,Men's Tennis,02-26-2024,-,02-26-2024,Ankle,Lower Extremity,Right,Bursitis,,Returned To Play As Tolerated
+MT&F24,Men's Track & Field,02-24-2024,-,02-27-2024,Brain,Head,,Concussion,,Limited Activity
+FH11,Field Hockey,02-23-2024,-,02-23-2024,Sacrum,Torso,Right,Other,,Returned To Play As Tolerated
+SB2,Softball,02-22-2024,-,02-22-2024,Knee,Lower Extremity,Left,Knee pain (finding),,Returned To Play As Tolerated
+WTE9,Women's Tennis,02-22-2024,-,02-22-2024,Brain,Head,Does Not Apply,Concussion,,Limited Activity
+WBB14,Women's Basketball,02-22-2024,-,02-22-2024,Knee,Lower Extremity,Left,Other Knee Injury,,Returned To Play As Tolerated
+G5,Men's Golf,02-22-2024,-,02-27-2024,Shoulder,Upper Extremity,Right,Strain,Pectoralis Minor,Returned To Play As Tolerated
+G5,Men's Golf,02-22-2024,-,02-27-2024,Shoulder,Upper Extremity,Right,Strain,Pectoralis Major,Returned To Play As Tolerated
+MTE6,Men's Tennis,02-21-2024,-,02-21-2024,Forearm,Upper Extremity,Right,Other Forearm Injury,,Returned To Play As Tolerated
+FB112,Football,02-21-2024,-,02-29-2024,Male,Genitals,,Other,,Limited Activity
+WBB19,Women's Basketball,02-20-2024,-,02-20-2024,Larynx,Neck,,Other,,Returned To Play and Closed
+MTE1,Men's Tennis,02-19-2024,-,02-19-2024,Lower Back,Torso,Bilateral,Other,,Limited Activity
+MT&F9,"Men's Cross Country, Men's Track & Field",02-19-2024,-,02-28-2024,Thigh,Lower Extremity,Left,Strain,,Limited Activity
+MTE3,Men's Tennis,02-19-2024,-,02-19-2024,Shoulder,Upper Extremity,,Tendinitis,,Returned To Play As Tolerated
+MTE5,Men's Tennis,02-19-2024,-,02-19-2024,Forearm,Upper Extremity,Right,Inflammation,,Returned To Play As Tolerated
+WTE6,Women's Tennis,02-19-2024,-,02-19-2024,Hip,Lower Extremity,,Tightness,,Returned To Play and Closed
+MT&F8,Men's Cross Country,02-17-2024,-,02-19-2024,Lower Leg,Lower Extremity,Right,Strain,Soleus,Returned To Play As Tolerated
+MT&F37,Men's Track & Field,02-17-2024,-,02-20-2024,Ankle,Lower Extremity,,Sprain,,Limited Activity
+WLAX26,Women's Lacrosse,02-17-2024,-,02-22-2024,Brain,Head,,Concussion,,Not Cleared
+MBB14,Mens Basketball,02-15-2024,-,02-15-2024,Ankle,Lower Extremity,Right,Sprain,Anterior Talofibular,Returned To Play As Tolerated
+MT&F22,Men's Track & Field,02-12-2024,-,02-19-2024,Lower Leg,Lower Extremity,Right,Tendinitis,,Returned To Play As Tolerated
+MTE11,Men's Tennis,02-12-2024,-,02-12-2024,Ankle,Lower Extremity,,Sprain,,Not Cleared
+WTE2,Women's Tennis,02-12-2024,-,02-12-2024,Hip,Lower Extremity,Right,Tightness,,Returned To Play As Tolerated
+SB18,Softball,02-11-2024,-,02-12-2024,Shoulder,Upper Extremity,Right,Sprain,,Returned To Play As Tolerated
+BASEB24,Baseball,02-11-2024,-,02-13-2024,Upper arm,Upper Extremity,Right,Strain,Biceps Brachii,Returned To Play As Tolerated
+SB4,Softball,02-10-2024,-,02-12-2024,Brain,Head,,Concussion,,Returned To Play As Tolerated
+SB11,Softball,02-09-2024,-,02-09-2024,Lower Leg,Lower Extremity,Left,Medial Tibial Stress Syndrome,,Returned To Play As Tolerated
+WTE10,Women's Tennis,02-09-2024,-,02-09-2024,Wrist,Upper Extremity,Left,Pain in wrist (finding),,Returned To Play As Tolerated
+MBB9,Mens Basketball,02-07-2024,-,02-12-2024,Shoulder,Upper Extremity,Left,Strain,Supraspinatus,Returned To Play As Tolerated
+SB5,Softball,02-07-2024,-,02-12-2024,Infectious Disease,General Medical,,COVID-19,,Returned To Play and Closed
+WBB16,Women's Basketball,02-07-2024,-,02-08-2024,Shoulder,Upper Extremity,,Subluxation,,Returned To Play As Tolerated
+WT&F35,Women's Track & Field,02-06-2024,-,02-06-2024,Wrist,Upper Extremity,Right,Sprain,,Returned To Play and Closed
+WLAX12,Women's Lacrosse,02-06-2024,-,02-22-2024,Brain,Head,,Concussion,,Returned To Play and Closed
+WT&F36,Women's Cross Country,02-05-2024,-,02-13-2024,Lower Leg,Lower Extremity,Right,Stress Reaction,,Limited Activity
+MLAX4,Men's Lacrosse,02-05-2024,-,02-05-2024,Infectious Disease,General Medical,,COVID-19,,Returned To Play and Closed
+MLAX27,Men's Lacrosse,02-05-2024,-,02-05-2024,Knee,Lower Extremity,Right,Tendinosis (finding),,Not Cleared
+WBB3,Women's Basketball,02-03-2024,-,02-05-2024,Ankle,Lower Extremity,,Sprain,,Returned To Play As Tolerated
+BASEB27,Baseball,02-02-2024,-,02-03-2024,Shoulder,Upper Extremity,Right,Subluxation,"Glenohumeral, Posterior",Returned To Play As Tolerated
+G5,Men's Golf,02-02-2024,-,02-06-2024,Elbow,Upper Extremity,Left,Inflammation,,Returned To Play and Closed
+MLAX17,Men's Lacrosse,02-01-2024,-,02-05-2024,Shoulder,Upper Extremity,,Glenoid Labrum Tear (SLAP),,Limited Activity
+MT&F43,Men's Track & Field,02-01-2024,-,02-20-2024,Foot,Lower Extremity,Left,Stress Reaction,,Limited Activity
+WTE1,Women's Tennis,02-01-2024,-,02-01-2024,Shoulder,Upper Extremity,Right,Sprain,,Returned To Play As Tolerated
+MLAX50,Men's Lacrosse,03-29-2024,-,04-01-2024,Lower Leg,Lower Extremity,Right,Strain,Gastrocnemius,Limited Activity
+MLAX50,Men's Lacrosse,03-29-2024,-,04-01-2024,Lower Leg,Lower Extremity,Right,Strain,Soleus,Limited Activity
+WT&F34,Women's Track & Field,03-28-2024,-,03-28-2024,Foot,Lower Extremity,Left,Foot pain (finding),,Returned To Play As Tolerated
+WTE4,Women's Tennis,03-28-2024,-,03-28-2024,Hip,Lower Extremity,,Piriformis Syndrome,,Returned To Play As Tolerated
+MT&F1,Men's Cross Country,03-27-2024,-,03-27-2024,Lower Leg,Lower Extremity,Left,Spasm,Peroneus Longus,Returned To Play As Tolerated
+FB98,Football,03-27-2024,-,03-27-2024,Thigh,Lower Extremity,Right,Strain,,Returned To Play As Tolerated
+MLAX24,Men's Lacrosse,03-27-2024,-,03-27-2024,Shoulder,Upper Extremity,,Strain,,Returned To Play As Tolerated
+MT&F10,"Men's Cross Country, Men's Track & Field",03-27-2024,-,03-27-2024,Body part,General Medical,,General Fatigue,,Returned To Play As Tolerated
+WTE4,Women's Tennis,03-26-2024,-,03-26-2024,Ankle,Lower Extremity,,Sprain,,Returned To Play As Tolerated
+FB66,Football,03-26-2024,-,03-26-2024,Brain,Head,,Concussion,,Not Cleared
+MT&F34,Men's Track & Field,03-25-2024,-,03-29-2024,Thigh,Lower Extremity,Right,Strain,Hamstring (partial tear),Limited Activity
+MBB4,Mens Basketball,03-25-2024,-,03-28-2024,Infectious Disease,General Medical,,Mononucleosis,,Not Cleared
+MT&F36,Men's Track & Field,03-23-2024,-,03-27-2024,Ankle,Lower Extremity,Right,Sprain,Calcaneofibular,Returned To Play As Tolerated
+WTE4,Women's Tennis,03-21-2024,-,03-21-2024,Lower Leg,Lower Extremity,,Shin Splints,,Returned To Play As Tolerated
+MT&F27,Men's Track & Field,03-21-2024,-,03-27-2024,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Limited Activity
+WTE2,Women's Tennis,03-20-2024,-,03-20-2024,Thigh,Lower Extremity,Left,Tightness,,Returned To Play and Closed
+WSOC21,Womens Soccer,03-20-2024,-,03-26-2024,Ankle,Lower Extremity,Right,Sprain,Lateral Talofibular,Limited Activity
+MLAX25,Men's Lacrosse,03-19-2024,-,03-20-2024,Brain,Head,,Concussion,,Not Cleared
+WTE1,Women's Tennis,03-19-2024,-,03-19-2024,Lower Leg,Lower Extremity,,Shin Splints,,Returned To Play As Tolerated
+G11,"Club Sports , Men's Golf",03-17-2024,-,03-19-2024,Abdomen,Torso,,Appendicitis,,Not Cleared
+G7,Women's Golf,03-15-2024,03-16-2024,03-19-2024,Wrist,Upper Extremity,Right,Pain in wrist (finding),,Returned To Play As Tolerated
+BASEB33,Baseball,03-15-2024,03-15-2024,03-23-2024,Lower Leg,Lower Extremity,Left,Medial Tibial Stress Syndrome,,Returned To Play As Tolerated
+SB8,Softball,03-14-2024,-,03-14-2024,Thigh,Lower Extremity,Left,Strain,,Returned To Play As Tolerated
+BASEB27,Baseball,03-14-2024,-,03-19-2024,Abdomen,Torso,Right,Inflammation,,Returned To Play As Tolerated
+BASEB1,Baseball,03-09-2024,03-09-2024,03-13-2024,Knee,Lower Extremity,Left,Fat Pad Syndrome,,Returned To Play As Tolerated
+SB15,Softball,03-06-2024,-,03-06-2024,Hip,Lower Extremity,Left,Strain,Iliopsoas,Returned To Play As Tolerated
+MLAX44,Men's Lacrosse,03-06-2024,-,03-06-2024,Shoulder,Upper Extremity,Right,Dislocation,,Returned To Play As Tolerated
+MLAX7,Men's Lacrosse,03-06-2024,-,03-27-2024,Foot,Lower Extremity,Left,Fracture,5th Metatarsal,Not Cleared
+WTE10,Women's Tennis,03-05-2024,-,03-05-2024,Knee,Lower Extremity,Left,Meniscus Tear,,Returned To Play As Tolerated
+WTE4,Women's Tennis,03-04-2024,-,03-04-2024,Thigh,Lower Extremity,Right,Strain,Adductor Longus,Returned To Play and Closed
+MSOC26,Men's Soccer,03-03-2024,-,03-03-2024,Lower Back,Torso,Left,Strain,,Returned To Play As Tolerated
+BASEB31,Baseball,03-02-2024,-,03-04-2024,Upper arm,Upper Extremity,Right,Strain,Biceps Brachii,Returned To Play As Tolerated
+WT&F16,Women's Track & Field,03-02-2024,-,03-27-2024,Ankle,Lower Extremity,Right,Sprain,,Returned To Play As Tolerated
+BASEB25,Baseball,04-21-2024,,04-22-2024,Respirology,General Medical,Does Not Apply,Allergies,,Returned To Play As Tolerated
+MSOC26,Men's Soccer,04-20-2024,,04-22-2024,Lower Leg,Lower Extremity,Right,Fracture,,Not Cleared
+MT&F45,Men's Track & Field,04-18-2024,,04-18-2024,Lower Leg,Lower Extremity,Bilateral,Tendinitis,Achilles Tendon,Returned To Play As Tolerated
+WSOC1,Womens Soccer,04-16-2024,,04-17-2024,Thigh,Lower Extremity,Right,Strain,,Returned To Play As Tolerated
+FB12,Football,04-16-2024,,04-16-2024,Knee,Lower Extremity,Left,Sprain,Posterior Cruciate Ligament,Returned To Play As Tolerated
+FB100,Football,04-15-2024,,04-16-2024,Knee,Lower Extremity,Right,Sprain,,Waiting For Assessment
+MSD10,Men's Swimming & Diving,04-15-2024,,04-15-2024,Wrist,Upper Extremity,Right,Contusion,,Limited Activity
+WTE9,Women's Tennis,04-14-2024,,04-14-2024,Brain,Head,,Concussion,,Not Cleared
+MT&F32,Men's Track & Field,04-13-2024,,04-17-2024,Thigh,Lower Extremity,Right,Strain,Hamstring (partial tear),Limited Activity
+FB47,Football,04-13-2024,,04-14-2024,Wrist,Upper Extremity,,Fracture,Scaphoid,Not Cleared
+BASEB10,Baseball,04-13-2024,,04-16-2024,Shoulder,Upper Extremity,Left,Subluxation,"Glenohumeral, Down",Returned To Play As Tolerated
+WT&F11,Women's Cross Country,04-13-2024,,04-15-2024,Knee,Lower Extremity,Right,Other Knee Injury,,Limited Activity
+FB101,Football,04-12-2024,,04-12-2024,Shoulder,Upper Extremity,Right,Strain,Pectoralis Major,Not Cleared
+SB18,Softball,04-12-2024,,04-12-2024,Thigh,Lower Extremity,Left,Strain,,Returned To Play As Tolerated
+FB51,Football,04-10-2024,,04-10-2024,Knee,Lower Extremity,Right,Rupture,Anterior Cruciate Ligament,Returned To Play As Tolerated
+MTE11,Men's Tennis,04-09-2024,,04-09-2024,Knee,Lower Extremity,,Contusion,General Area,Returned To Play As Tolerated
+WT&F19,Women's Track & Field,04-09-2024,,04-09-2024,Shoulder,Upper Extremity,Right,Subluxation,,Returned To Play As Tolerated
+WTE7,Women's Tennis,04-08-2024,,04-08-2024,Knee,Lower Extremity,,Contusion,General Area,Returned To Play As Tolerated
+FB49,Football,04-07-2024,,04-08-2024,Thigh,Lower Extremity,Left,Strain,,Not Cleared
+MT&F22,Men's Track & Field,04-05-2024,,04-08-2024,Thigh,Lower Extremity,Left,Strain,Hamstring (partial tear),Not Cleared
+SB13,Softball,04-05-2024,,04-05-2024,Shoulder,Upper Extremity,Right,Strain,General Rotator Cuff,Returned To Play As Tolerated
+MSD37,Men's Swimming & Diving,04-04-2024,,04-04-2024,Infectious Disease,General Medical,,Mononucleosis,,Limited Activity
+MSOC1,Men's Soccer,04-04-2024,,04-11-2024,Foot,Lower Extremity,Left,Sprain,Ligaments Mid-foot,Returned To Play As Tolerated
+WSOC3,Womens Soccer,04-04-2024,,04-04-2024,Knee,Lower Extremity,Left,Discomfort (finding),,Limited Activity
+MSOC20,Men's Soccer,04-03-2024,,04-03-2024,Thoracic Spine,Torso,Bilateral,Spasm,,Returned To Play As Tolerated
+SB18,Softball,04-03-2024,,04-03-2024,Hip,Lower Extremity,Left,Discomfort (finding),,Returned To Play As Tolerated
+G10,Men's Golf,04-02-2024,,04-02-2024,Knee,Lower Extremity,Left,Knee pain (finding),,Returned To Play As Tolerated
+WSD32,Women's Swimming & Diving,04-01-2024,,04-01-2024,Knee,Lower Extremity,Left,Patellofemoral Pain Syndrome (PFPS),,Returned To Play As Tolerated

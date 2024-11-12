@@ -1,0 +1,135 @@
+---
+title: "practicum_2024"
+author: "Matt McClements"
+date: '2024-10-14'
+output: html_document
+---
+```{r setup, include=FALSE}
+library(dplyr)
+library(readr)
+library(readxl)
+library(ggplot2)
+library(googlesheets4)
+library(gridExtra)
+library(plotly)
+library(tidyverse)
+library(lubridate)
+
+data <- read_csv("Downloads/Complied Jump Data  - Sheet1 (1).csv")
+baseball <- read_csv("Downloads/Baseball Coded.xlsx - Sheet2.csv")
+injuries <- read_csv("Downloads/Athlete injuries 2023-2024.xlsx - Injuries Master.csv")
+
+data <- data %>%
+  rename(athlete_code = Name)
+```
+
+```{r pressure, echo=FALSE}
+##All filtered/ merged data here:
+# Filtering all jump data by men and women
+womens_teams <- filter(data, Gender == "Women")
+mens_teams <- filter(data, Gender == "Men")
+
+#Merging all jump data with all injury data + filtering out irrelevant injury types
+injured_jumps <- merge(data, injuries, by = "athlete_code")
+injured_jumps <- filter(injured_jumps, injury_type != "COVID-19", injury_type != "Concussion", 
+                         injury_type != "Allergies")
+
+#Changing the dates in the code to be able to split in filters 
+injured_jumps$Date <- mdy(injured_jumps$Date)
+injured_jumps$problem_date <- mdy(injured_jumps$problem_date)
+knee_inj <- filter(injuries, body_part == "Knee")
+#Merging knee injury data with jump data
+merged_knees <- merge(data, knee_inj, by = "athlete_code" )
+#Filtering the merged knee data by gender
+mens_merged_knees <- filter(merged_knees, Gender == "Men")
+womens_merged_knees <- filter(merged_knees, Gender == "Women") 
+
+#filtering all jump data with injuries to divide the two 
+test <- merge(data, injuries, by = "athlete_code", all = TRUE)
+na_rows <- is.na(injuries$problem_date)
+print(na_rows)
+new_dataset <- test %>%
+  mutate(problem_date = ifelse(is.na(problem_date), "none", problem_date))
+noninjured_jumps <- data.frame(filter(new_dataset, problem_date == "none"))
+injured_jumps <- injured_jumps %>%
+  filter(!is.na(mRSI))
+noninjured_jumps <- noninjured_jumps %>%
+  filter(!is.na(mRSI))
+
+# Finding a way to see mRSI prior to the report data
+pre <- data.frame(filter(injured_jumps, problem_date >= Date, affected_area == "Lower Extremity"))
+post <- data.frame(filter(injured_jumps, problem_date < Date, affected_area == "Lower Extremity" ))
+
+aff_area1 <- data.frame(filter(injured_jumps, problem_date <= Date, affected_area == "Torso" ))
+aff_area2 <- data.frame(filter(injured_jumps, problem_date >= Date, athlete_code == "BASEB29"))
+```
+
+```{r pressure, echo=FALSE}
+#Analysis with all jump data
+## Looking at Avg propulsive velocity, Takeoff velocity, Avg propulsive power 
+teamp1 <- ggplot(womens_teams, aes(x = Date, y= `Takeoff Velocity`)) + geom_point()
+teamp2 <- ggplot(mens_teams, aes(x = Date, y = `Takeoff Velocity`)) + geom_point()
+#grid.arrange(teamp1, teamp2, ncol = 2)
+
+#Finding injured athletes 
+#g1 <- ggplot(mens_merged_knees, aes(x = `Takeoff Velocity`, y= `mRSI`)) + geom_point()
+#g2 <- ggplot(womens_merged_knees, aes(x = `Takeoff Velocity`, y= `mRSI`)) + geom_point()
+#grid.arrange(g1, g2, ncol = 2)
+
+g1 <- ggplot(injured_jumps, aes(x = `Avg. Propulsive Velocity`, y= `mRSI`)) + geom_point()
+g2 <- ggplot(data, aes(x = `Avg. Propulsive Velocity`, y= `mRSI`)) + geom_point()
+grid.arrange(g1, g2, ncol = 2)
+
+# Export dataset
+#file_path <- "~/Downloads/jump_data.csv"
+#write.csv(injured_jumps, file_path, row.names = FALSE)
+```
+
+```{r,pressure, echo=FALSE}
+##### Messing around with comparing Pre injured jumps and Post injured jumps 
+g3 <- ggplot(mrsi1, aes(x = `Date`, y = `mRSI`, color = athlete_code )) + geom_point() 
+g4 <- ggplot(mrsi2, aes(x = `Date`, y = `mRSI`, color = athlete_code )) + geom_point() 
+grid.arrange(g3, g4, ncol = 2)
+g5 <- ggplot(aff_area1, aes(x = `Date`, y = `mRSI`, color = athlete_code )) + geom_point() 
+g6 <- ggplot(aff_area2, aes(x = `Date`, y = `mRSI` )) + geom_point() 
+grid.arrange(g5, g6, ncol = 2)
+```
+g3 <- ggplot(mrsi1, aes(x = `Date`, y = `mRSI`)) + geom_point() 
+g4 <- ggplot(mrsi2, aes(x = `Date`, y = `mRSI`)) + geom_point() 
+grid.arrange(g3, g4, ncol = 2)
+```{r, echo=FALSE}
+#fooling with injured and non injured athlete jump data 
+# Export dataset
+#file_path2 <- "~/Downloads/new_jump_data.csv"
+#write.csv(new_dataset, file_path2, row.names = FALSE)
+```
+
+```{r,pressure, echo=FALSE}
+##### Messing around with comparing Pre injured jumps and Post injured jumps 
+g3 <- ggplot(mrsi1, aes(x = `Date`, y = `mRSI` )) + geom_point() 
+g4 <- ggplot(mrsi2, aes(x = `Date`, y = `mRSI`)) + geom_point() 
+grid.arrange(g3, g4, ncol = 2)
+
+mean(mrsi1$mRSI)
+mean(mrsi2$mRSI)
+# Means
+pre_means <- data.frame(colMeans(pre[sapply(pre, is.numeric)], na.rm = TRUE))
+pre_means <- pre_means %>%
+  rename(
+    pre_injury = colMeans.pre.sapply.pre..is.numeric....na.rm...TRUE.
+  )
+post_means <- data.frame(colMeans(post[sapply(post, is.numeric)], na.rm = TRUE))
+post_means <- post_means %>%
+  rename(
+    post_means = colMeans.post.sapply.post..is.numeric....na.rm...TRUE.
+  )
+premeans_transposed <- t(pre_means)
+postmeans_transposed <- t(post_means)
+
+means <- data.frame(merged_df <- rbind(premeans_transposed, postmeans_transposed))
+```
+
+```{r,pressure, echo=FALSE}
+##### plotting means 
+g10 <- ggplot(means, aes(x = ""))
+```

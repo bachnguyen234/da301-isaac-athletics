@@ -1,0 +1,505 @@
+---
+title: "DA 301"
+output: html_document
+date: "2024-11-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Load libraries
+library(dplyr)
+library(glmnet)
+
+#read data
+data <- read.csv("new_jump_data - new_jump_data.csv")
+unique(data$injury_type)
+
+# Remove columns that are entirely NA
+data <- data[, colSums(is.na(data)) < nrow(data)]
+
+```
+
+```{r}
+model <-lm(L.R.Peak.Braking.Force ~ Peak.Propulsive.Power , data=data)
+summary(model)
+```
+
+
+```{r}
+# Example: Creating a binary variable for injury/fatigue status
+data$Injured <- ifelse(data$injury_type == "NA", 0, 1)
+data$Injured[is.na(data$Injured)]<- 0 
+
+# Check distribution of the target variable
+table(data$Injured)
+
+```
+
+There are 5043 athletes who are injured out of 10967 athletes in the dataset.
+
+### mRSI percentage change 
+```{r}
+# Filter data to include only injured athletes
+injured_data <- data %>% filter(Injured == 1)%>%group_by(athlete_code) %>%  # assuming athlete_id uniquely identifies each athlete
+  mutate(
+    mRSI_before_injury = mean(mRSI[Date < problem_date], na.rm = TRUE),  # Average mRSI before injury date
+    mRSI_after_injury = mean(mRSI[Date > problem_date], na.rm = TRUE)     # Average mRSI after return date
+  ) %>%
+  ungroup() %>%
+  
+  # Calculate percentage change in mRSI
+  mutate(
+    mRSI_pct_change = (mRSI_after_injury / mRSI_before_injury) - 1,
+    mRSI_reduction_10pct = ifelse(mRSI_pct_change <= -0.1, 1, 0)  # Binary indicator for 20% or more reduction
+  )
+
+# Filter to get athletes with a 20% or greater reduction in mRSI
+significant_reduction_mRSI <- injured_data %>%
+  filter(mRSI_reduction_10pct == 1)
+
+# Plot the smoothed density graph for percentage change in mRSI
+ggplot(injured_data, aes(x = mRSI_pct_change)) +
+  geom_density(fill = "blue", alpha = 0.4) +
+  geom_vline(xintercept = -0.1, color = "red", linetype = "dashed") +
+  geom_vline(xintercept=0, color="darkgreen")+
+  labs(
+    title = "Density Plot of Percentage Change in mRSI for Injured Athletes",
+    x = "Percentage Change in mRSI (Post / Pre Injury - 1)",
+    y = "Density"
+  ) +
+  scale_x_continuous(expand = c(0, 0))+
+  theme_minimal()
+```
+
+```{r}
+# Calculate the proportion of athletes with mRSI reduction at the chosen threshold (e.g., 10%)
+threshold <- 0  # Change this to your preferred threshold
+
+# Add a binary variable for athletes below the threshold
+injured_data <- injured_data %>%
+  mutate(mRSI_below_threshold = ifelse(mRSI_pct_change <= threshold, 1, 0))
+
+# Calculate proportion of athletes with mRSI below the threshold
+proportion_below_threshold <- injured_data %>%
+  summarise(
+    total_athletes = n(),
+    below_threshold = sum(mRSI_below_threshold, na.rm = TRUE),
+    proportion_below_threshold = below_threshold / total_athletes
+  )
+
+# Print the results
+proportion_below_threshold
+```
+
+
+### Peak Braking Velocity Percentage Change
+```{r}
+# Filter data to include only injured athletes
+injured_data <- data %>% filter(Injured == 1)%>%group_by(athlete_code) %>%  # assuming athlete_id uniquely identifies each athlete
+  mutate(
+    braking_velocity_before_injury = mean(Peak.Braking.Velocity[Date < problem_date], na.rm = TRUE),  # Average Peak Braking Velocity before injury date
+    braking_velocity_after_injury = mean(Peak.Braking.Velocity[Date > problem_date], na.rm = TRUE)     # Average mRSI after return date
+  ) %>%
+  ungroup() %>%
+  
+  # Calculate percentage change in Peak Velocity change
+  mutate(
+    braking_velocity_change = (braking_velocity_after_injury / braking_velocity_before_injury) - 1,
+    braking_velocity_reduction_10pct = ifelse(braking_velocity_change <= -0.1, 1, 0)  # Binary indicator for 20% or more reduction
+  )
+
+# Filter to get athletes with a 20% or greater reduction in mRSI
+significant_reduction_brake <- injured_data %>%
+  filter(braking_velocity_reduction_10pct == 1)
+
+# Plot the smoothed density graph for percentage change in mRSI
+ggplot(injured_data, aes(x = braking_velocity_change)) +
+  geom_density(fill = "purple", alpha = 0.4) +
+  geom_vline(xintercept=0, color="darkgreen")+
+  labs(
+    title = "Percentage Change in Peak Braking Velocity for Injured Athletes",
+    x = "Percentage Change in Peak Braking Velocity (Post / Pre Injury - 1)",
+    y = "Density"
+  ) +
+  scale_x_continuous(expand = c(0, 0))+
+  theme_minimal()
+```
+
+```{r}
+proportion_below_threshold_velocity <- injured_data %>%
+  summarise(
+    total_athletes = n(),
+    below_threshold_velocity = sum(braking_velocity_below_threshold, na.rm = TRUE),
+    proportion_below_threshold_velocity = below_threshold_velocity / total_athletes
+  )
+
+# Print the results
+proportion_below_threshold_velocity
+```
+
+### Peak Propulsive Power
+```{r}
+# Filter data to include only injured athletes
+injured_data <- data %>% filter(Injured == 1)%>%group_by(athlete_code) %>%  # assuming athlete_id uniquely identifies each athlete
+  mutate(
+    propulsive_before_injury = mean(Peak.Propulsive.Force[Date < problem_date], na.rm = TRUE),  # Average Peak Braking Velocity before injury date
+    propulsive_after_injury = mean(Peak.Propulsive.Force[Date > problem_date], na.rm = TRUE)     # Average mRSI after return date
+  ) %>%
+  ungroup() %>%
+  
+  # Calculate percentage change in Peak Velocity change
+  mutate(
+    propulsive_change = (propulsive_after_injury / propulsive_before_injury) - 1,
+    propulsive_reduction_10pct = ifelse(propulsive_change <= -0.1, 1, 0)  # Binary indicator for 20% or more reduction
+  )
+
+# Filter to get athletes with a 20% or greater reduction in mRSI
+significant_reduction_propulsive <- injured_data %>%
+  filter(propulsive_reduction_10pct == 1)
+
+# Plot the smoothed density graph for percentage change in mRSI
+ggplot(injured_data, aes(x = propulsive_change)) +
+  geom_density(fill = "orange ", alpha = 0.4) +
+  geom_vline(xintercept=0, color="darkgreen")+
+  labs(
+    title = "Percentage Change in Peak Propulsive Force for Injured Athletes",
+    x = "Percentage Change in Peak Propulsive Force (Post / Pre Injury - 1)",
+    y = "Density"
+  ) +
+  scale_x_continuous(expand = c(0, 0))+
+  theme_minimal()
+```
+
+```{r}
+# Calculate the proportion of athletes with mRSI reduction at the chosen threshold (e.g., 10%)
+threshold_propulsive <- 0  # Change this to your preferred threshold
+
+# Add a binary variable for athletes below the threshold
+injured_data <- injured_data %>%
+  mutate(propulsive_below_threshold = ifelse(propulsive_change <= threshold_propulsive, 1, 0))
+
+# Calculate proportion of athletes with peak braking velocity below the threshold
+proportion_below_threshold_propulsive <- injured_data %>%
+  summarise(
+    total_athletes = n(),
+    below_threshold_propulsive = sum(propulsive_below_threshold, na.rm = TRUE),
+    proportion_below_threshold_propulsive= below_threshold_propulsive / total_athletes
+  )
+
+# Print the results
+proportion_below_threshold_propulsive
+```
+
+### Average Braking Power
+```{r}
+# Filter data to include only injured athletes
+injured_data <- data %>% filter(Injured == 1)%>%group_by(athlete_code) %>%  # assuming athlete_id uniquely identifies each athlete
+  mutate(
+    avg_brake_before_injury = mean(Avg..Braking.Power[Date < problem_date], na.rm = TRUE),  # Average Peak Braking Velocity before injury date
+    avg_brake_after_injury = mean(Avg..Braking.Power[Date > problem_date], na.rm = TRUE)     # Average mRSI after return date
+  ) %>%
+  ungroup() %>%
+  
+  # Calculate percentage change in Peak Velocity change
+  mutate(
+    avg_brake_change = (avg_brake_after_injury / avg_brake_before_injury) - 1,
+    avg_brake_reduction_10pct = ifelse(avg_brake_change <= -0.1, 1, 0)  # Binary indicator for 20% or more reduction
+  )
+
+# Filter to get athletes with a 20% or greater reduction in avg brake
+significant_reduction_avg_brake <- injured_data %>%
+  filter(avg_brake_reduction_10pct == 1)
+
+# Plot the smoothed density graph for percentage change in avg brake
+ggplot(injured_data, aes(x = avg_brake_change)) +
+  geom_density(fill = "brown", alpha = 0.4) +
+  geom_vline(xintercept=0, color="darkgreen")+
+  labs(
+    title = "Percentage Change in Average Braking Power for Injured Athletes",
+    x = "Percentage Change in Average Braking Power (Post / Pre Injury - 1)",
+    y = "Density"
+  ) +
+  scale_x_continuous(expand = c(0, 0))+
+  theme_minimal()
+
+```
+
+```{r}
+# Calculate the proportion of athletes with mRSI reduction at the chosen threshold (e.g., 10%)
+threshold_avg_brake <- 0  # Change this to your preferred threshold
+
+# Add a binary variable for athletes below the threshold
+injured_data <- injured_data %>%
+  mutate(avg_brake_below_threshold = ifelse(avg_brake_change <= threshold_avg_brake, 1, 0))
+
+# Calculate proportion of athletes with peak braking velocity below the threshold
+proportion_below_threshold_avg_brake <- injured_data %>%
+  summarise(
+    total_athletes = n(),
+    below_threshold_avg_brake = sum(avg_brake_below_threshold, na.rm = TRUE),
+    proportion_below_threshold_avg_brake= below_threshold_avg_brake / total_athletes
+  )
+
+# Print the results
+proportion_below_threshold_avg_brake
+```
+
+### Peak Braking Force
+```{r}
+# Filter data to include only injured athletes
+injured_data <- data %>% filter(Injured == 1)%>%group_by(athlete_code) %>%  # assuming athlete_id uniquely identifies each athlete
+  mutate(
+    braking_before_injury = mean(Peak.Braking.Force[Date < problem_date], na.rm = TRUE),  # Average Peak Braking Velocity before injury date
+    braking_after_injury = mean(Peak.Braking.Force[Date > problem_date], na.rm = TRUE)     # Average mRSI after return date
+  ) %>%
+  ungroup() %>%
+  
+  # Calculate percentage change in Peak Velocity change
+  mutate(
+    braking_change = (braking_after_injury / braking_before_injury) - 1,
+    braking_reduction_10pct = ifelse(braking_change <= -0.1, 1, 0)  # Binary indicator for 20% or more reduction
+  )
+
+# Filter to get athletes with a 20% or greater reduction in avg brake
+significant_reduction_braking<- injured_data %>%
+  filter(braking_reduction_10pct == 1)
+
+# Plot the smoothed density graph for percentage change in avg brake
+ggplot(injured_data, aes(x = braking_change)) +
+  geom_density(fill = "navy", alpha = 0.4) +
+  geom_vline(xintercept=0, color="darkgreen")+
+  labs(
+    title = "Percentage Change in Peak Braking Force for Injured Athletes",
+    x = "Percentage Change in Peak Braking Force (Post / Pre Injury - 1)",
+    y = "Density"
+  ) +
+  scale_x_continuous(expand = c(0, 0))+
+  theme_minimal()
+
+```
+
+```{r}
+# Calculate the proportion of athletes with mRSI reduction at the chosen threshold (e.g., 10%)
+threshold_braking <- 0  # Change this to your preferred threshold
+
+# Add a binary variable for athletes below the threshold
+injured_data <- injured_data %>%
+  mutate(braking_below_threshold = ifelse(braking_change <= threshold_braking, 1, 0))
+
+# Calculate proportion of athletes with peak braking velocity below the threshold
+proportion_below_threshold_braking <- injured_data %>%
+  summarise(
+    total_athletes = n(),
+    below_threshold_braking = sum(braking_below_threshold, na.rm = TRUE),
+    proportion_below_threshold_braking= below_threshold_braking / total_athletes
+  )
+
+# Print the results
+proportion_below_threshold_braking
+```
+
+# mRSI Marginal Change
+```{r}
+mRSI_data <- data %>%
+  group_by(athlete_code, Date) %>%
+  summarize(
+    Avg_mRSI = mean(mRSI, na.rm = TRUE),  # Calculate average mRSI per day
+    .groups = "drop"  # Drop grouping after summarizing
+  ) %>%
+  arrange(athlete_code, Date) %>%
+  mutate(
+    mRSI_marginal_change = (Avg_mRSI - lag(Avg_mRSI)) / lag(Avg_mRSI)  # Day-to-day percentage change
+  ) %>%
+  ungroup()
+```
+
+# Visualize data for athlete BASEB1
+```{r}
+specific_athlete <- "BASEB1"  # Replace with desired athlete code
+mRSI_data_single <- mRSI_data %>%
+  filter(athlete_code == specific_athlete)  # Remove NAs
+mRSI_data_single$Date <- as.Date(mRSI_data_single$Date, format = "%m-%d-%Y")
+
+# Plot for the single athlete
+ggplot(mRSI_data_single, aes(x = Date, y = mRSI_marginal_change)) +
+  geom_point(color = "red") +  # Scatter plot
+  geom_line(color = "black") +  # Line plot with thickness
+  labs(
+    title = paste("Marginal Percentage Change in mRSI for Athlete", specific_athlete),
+    x = "Date",
+    y = "Marginal Percentage Change in mRSI",
+    caption = "Player reported having an injury on March 13. His mRSI dropped significantly on March 14."
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for clarity
+  ) +
+  scale_x_date(date_labels = "%d-%m-%Y")  # Format the date and set breaks
+
+```
+
+# Peak Braking Velocity Marginal % Change
+```{r}
+# Peak Braking Velocity Data
+pbv_data <- data %>%
+  group_by(athlete_code, Date) %>%  # Group by athlete_code and Date
+  summarize(
+    Avg_pbv = mean(Peak.Braking.Velocity, na.rm = TRUE),  # Average Peak.Braking.Velocity for each day
+    .groups = "drop"  # Drop grouping after summarizing
+  ) %>%
+  arrange(athlete_code, Date) %>%  # Arrange by athlete_code and Date
+  mutate(
+    pbv_marginal_change = (Avg_pbv - lag(Avg_pbv)) / lag(Avg_pbv)  # Day-to-day percentage change
+  ) %>%
+  ungroup()  # Ungroup after mutation
+```
+
+# Visualize data for athlete BASEB1
+```{r}
+specific_athlete <- "BASEB1"  # Replace with desired athlete code
+pbv_data_single <- pbv_data %>%
+  filter(athlete_code == specific_athlete)  # Remove NAs
+pbv_data_single$Date <- as.Date(pbv_data_single$Date, format = "%m-%d-%Y")
+
+# Plot for the single athlete
+ggplot(pbv_data_single, aes(x = Date, y = pbv_marginal_change)) +
+  geom_point(color = "red") +  # Scatter plot
+  geom_line(color = "black") +  # Line plot with thickness
+  labs(
+    title = paste("Marginal Percentage Change in Peak Braking Velocity for Athlete", specific_athlete),
+    x = "Date",
+    y = "Marginal Percentage Change in Peak Braking Velocity",
+    caption = "Player reported having an injury on March 13."
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for clarity
+  ) +
+  scale_x_date(date_labels = "%d-%m-%Y")  # Format the date and set breaks
+
+```
+
+# Peak Propulsive Force
+```{r}
+# Peak Braking Velocity Data
+ppf_data <- data %>%
+  group_by(athlete_code, Date) %>%  # Group by athlete_code and Date
+  summarize(
+    Avg_ppf = mean(Peak.Propulsive.Force, na.rm = TRUE),  # Average Peak.Braking.Velocity for each day
+    .groups = "drop"  # Drop grouping after summarizing
+  ) %>%
+  arrange(athlete_code, Date) %>%  # Arrange by athlete_code and Date
+  mutate(
+    ppf_marginal_change = (Avg_ppf - lag(Avg_ppf)) / lag(Avg_ppf)  # Day-to-day percentage change
+  ) %>%
+  ungroup()  # Ungroup after mutation
+```
+
+# Visualize data for athlete BASEB1
+```{r}
+specific_athlete <- "BASEB1"  # Replace with desired athlete code
+ppf_data_single <- ppf_data %>%
+  filter(athlete_code == specific_athlete)  # Remove NAs
+ppf_data_single$Date <- as.Date(ppf_data_single$Date, format = "%m-%d-%Y")
+
+# Plot for the single athlete
+ggplot(ppf_data_single, aes(x = Date, y = ppf_marginal_change)) +
+  geom_point(color = "red") +  # Scatter plot
+  geom_line(color = "black") +  # Line plot with thickness
+  labs(
+    title = paste("Marginal Percentage Change in Peak Propulsive Force for Athlete", specific_athlete),
+    x = "Date",
+    y = "Marginal Percentage Change in Peak Propulsive Force",
+    caption = "Player reported having an injury on March 13."
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for clarity
+  ) +
+  scale_x_date(date_labels = "%d-%m-%Y")  # Format the date and set breaks
+
+```
+# Avg..Braking.Power
+```{r}
+abp_data <- data %>%
+  group_by(athlete_code, Date) %>%  # Group by athlete_code and Date
+  summarize(
+    Avg_abp = mean(Avg..Braking.Power, na.rm = TRUE),  # Average Peak.Braking.Velocity for each day
+    .groups = "drop"  # Drop grouping after summarizing
+  ) %>%
+  arrange(athlete_code, Date) %>%  # Arrange by athlete_code and Date
+  mutate(
+    abp_marginal_change = (Avg_abp - lag(Avg_abp)) / lag(Avg_abp)  # Day-to-day percentage change
+  ) %>%
+  ungroup()  # Ungroup after mutation
+```
+
+# Visualize data for athlete BASEB1
+```{r}
+specific_athlete <- "BASEB1"  # Replace with desired athlete code
+abp_data_single <- abp_data %>%
+  filter(athlete_code == specific_athlete)  # Remove NAs
+abp_data_single$Date <- as.Date(abp_data_single$Date, format = "%m-%d-%Y")
+
+# Plot for the single athlete
+ggplot(abp_data_single, aes(x = Date, y = abp_marginal_change)) +
+  geom_point(color = "red") +  # Scatter plot
+  geom_line(color = "black") +  # Line plot with thickness
+  labs(
+    title = paste("Marginal Percentage Change in Average Braking Power for Athlete", specific_athlete),
+    x = "Date",
+    y = "Marginal Percentage Change in Average Braking Power",
+    caption = "Player reported having an injury on March 13."
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for clarity
+  ) +
+  scale_x_date(date_labels = "%d-%m-%Y")  # Format the date and set breaks
+
+```
+
+# Peak.Braking.Force
+```{r}
+pbf_data <- data %>%
+  group_by(athlete_code, Date) %>%  # Group by athlete_code and Date
+  summarize(
+    Avg_pbf = mean(Peak.Braking.Force, na.rm = TRUE),  # Average Peak.Braking.Velocity for each day
+    .groups = "drop"  # Drop grouping after summarizing
+  ) %>%
+  arrange(athlete_code, Date) %>%  # Arrange by athlete_code and Date
+  mutate(
+    pbf_marginal_change = (Avg_pbf - lag(Avg_pbf)) / lag(Avg_pbf)  # Day-to-day percentage change
+  ) %>%
+  ungroup()  # Ungroup after mutation
+```
+
+# Visualize data for athlete BASEB1
+```{r}
+specific_athlete <- "BASEB1"  # Replace with desired athlete code
+pbf_data_single <- pbf_data %>%
+  filter(athlete_code == specific_athlete)  # Remove NAs
+pbf_data_single$Date <- as.Date(pbf_data_single$Date, format = "%m-%d-%Y")
+
+ggplot(pbf_data_single, aes(x = Date, y = pbf_marginal_change)) +
+  geom_point(color = "red") +  # Scatter plot
+  geom_line(color = "black") +  # Line plot with thickness
+  labs(
+    title = paste("Marginal Percentage Change in Peak Braking Force", specific_athlete),
+    x = "Date",
+    y = "Marginal Percentage Change in Peak Braking Force",
+    caption = "Player reported having an injury on March 13."
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for clarity
+  ) +
+  scale_x_date(date_labels = "%d-%m-%Y")  # Format the date and set breaks
+
+```
+
+

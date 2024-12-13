@@ -31,7 +31,7 @@ mens_teams <- filter(data, Gender == "Men")
 
 #Merging all jump data with all injury data + filtering out irrelevant injury types
 injured_jumps <- merge(data, injuries, by = "athlete_code")
-injured_jumps <- filter(injured_jumps, injury_type != "COVID-19", injury_type != "Concussion", 
+injured_jumps <- filter(injured_jumps, injury_type != "COVID-19", 
                          injury_type != "Allergies")
 
 #Changing the dates in the code to be able to split in filters 
@@ -57,12 +57,83 @@ noninjured_jumps <- noninjured_jumps %>%
   filter(!is.na(mRSI))
 
 # Finding a way to see mRSI prior to the report data
-pre <- data.frame(filter(injured_jumps, problem_date >= Date, affected_area == "Lower Extremity"))
-post <- data.frame(filter(injured_jumps, problem_date < Date, affected_area == "Lower Extremity" ))
+pre <- data.frame(filter(injured_jumps, problem_date >= Date))
+post <- data.frame(filter(injured_jumps, problem_date < Date))
 
-aff_area1 <- data.frame(filter(injured_jumps, problem_date <= Date, affected_area == "Torso" ))
-aff_area2 <- data.frame(filter(injured_jumps, problem_date >= Date, athlete_code == "BASEB29"))
+aff_area1 <- data.frame(filter(injured_jumps, problem_date <= Date, affected_area == "Lower Extremity" ))
+#unique(pre$team)
 ```
+
+```{r,pressure, echo=FALSE}
+### ACL injury included with braking force
+acl_research1 <- data.frame(filter(injured_jumps, body_part == "Knee"))
+pre_acl <- data.frame(filter(acl_research1, problem_date >= Date))
+post_acl <- data.frame(filter(acl_research1, problem_date < Date))
+g1<- ggplot(pre_acl, aes(x= Date, y = Peak.Braking.Velocity, color = athlete_code)) + geom_point()
+g2 <- ggplot(post_acl, aes(x= Date, y = Peak.Braking.Velocity, color = athlete_code)) + geom_point()
+grid.arrange(g1, g2, ncol = 2)
+
+#Linear regression / Prediction Model of braking force and mRSI 
+model <- lm(mRSI~L.R.Peak.Braking.Force, data = acl_research1)
+new_data <- data.frame(L.R.Peak.Braking.Force = c(-10, -8, 0, 10, 8))
+predict(model, newdata = new_data)
+#Histograms comparing breaking force and knee injuries 
+non_knee_injuries <- data.frame(filter(injured_jumps, body_part != "Knee")) 
+peak_braking <- acl_research1$L.R.Peak.Braking.Force
+hist(peak_braking)
+normal_braking <- non_knee_injuries$L.R.Peak.Braking.Force
+hist(normal_braking)
+hist_compare <- wilcox.test(peak_braking, normal_braking)
+hist_compare
+hist_compare2 <- ks.test(peak_braking, normal_braking)
+hist_compare2
+
+# Linear regression/ prediction model for Top 4 variables vs mRSI 
+men_predictors <- data.frame(filter(injured_jumps, Gender == "Men"))
+female_predictors <- data.frame(filter(injured_jumps, Gender == "Women"))
+#Men Peak Propulsive Power 
+men_model1 <- lm(mRSI~Peak.Braking.Power, data = men_predictors)
+nd1 <- data.frame(Peak.Braking.Power = c(-1000, -900))
+predict(men_model1, newdata = nd1)
+
+female_model1 <- lm(mRSI~Peak.Braking.Power, data = female_predictors)
+nd2 <- data.frame(Peak.Braking.Power = c(-1000, -900))
+predict(female_model1, newdata = nd2)
+#Men Peak Braking Power 
+predict(men_model, newdata = nd1 )
+peak_braking <- acl_research1$L.R.Peak.Braking.Force
+## Plots 
+hist(peak_braking, main = "L|R Peak Braking Force of Knee injuries", xlab = "")
+
+normal_braking <- non_knee_injuries$L.R.Peak.Braking.Force
+hist(normal_braking, main = "L|R Peak Braking Force of Non-Knee injuries", xlab = "")
+```
+
+```{r,pressure, echo=FALSE}
+### Field Vs Court sports analysis in athletes with lower extremity injuries 
+court_sports <- data.frame(filter(pre, affected_area == "Lower Extremity",
+                                  team == c("Women's Basketball", "Mens Basketball","Women's Tennis",
+                                  "Men's Tennis", "Women's Squash")))
+field_sports <- data.frame(filter(pre, affected_area == "Lower Extremity",
+                                  team == c("Baseball",
+                                  "Softball",
+                                  "Men's Lacrosse")))
+g1 <- ggplot(court_sports, aes(x = Date, y = mRSI)) + geom_point() + geom_smooth()
+g2 <- ggplot(field_sports, aes(x = Date, y = mRSI)) + geom_point() + geom_smooth()
+grid.arrange(g1, g2, ncol = 2)
+```
+
+```{r,pressure, echo=FALSE}
+### Specific example of major predictors, pre-injury, for a specific athlete
+athlete_analysis_pre <- data.frame(filter(pre, athlete_code == "BASEB1"))
+athlete_analysis_post <- data.frame(filter(post, athlete_code == "BASEB1"))
+g1 <- ggplot(athlete_analysis_pre, aes(x = Date, y = Avg..Braking.Power
+                                   )) + geom_point() + geom_smooth()
+g2 <- ggplot(athlete_analysis_post, aes(x = Date, y = Avg..Braking.Power
+                                   )) + geom_point() + geom_smooth()
+grid.arrange(g1, g2, ncol = 2)
+```
+
 
 ```{r pressure, echo=FALSE}
 #Analysis with all jump data
@@ -94,42 +165,14 @@ g5 <- ggplot(aff_area1, aes(x = `Date`, y = `mRSI`, color = athlete_code )) + ge
 g6 <- ggplot(aff_area2, aes(x = `Date`, y = `mRSI` )) + geom_point() 
 grid.arrange(g5, g6, ncol = 2)
 ```
-g3 <- ggplot(mrsi1, aes(x = `Date`, y = `mRSI`)) + geom_point() 
-g4 <- ggplot(mrsi2, aes(x = `Date`, y = `mRSI`)) + geom_point() 
-grid.arrange(g3, g4, ncol = 2)
-```{r, echo=FALSE}
-#fooling with injured and non injured athlete jump data 
-# Export dataset
-#file_path2 <- "~/Downloads/new_jump_data.csv"
-#write.csv(new_dataset, file_path2, row.names = FALSE)
-```
-
-```{r,pressure, echo=FALSE}
-##### Messing around with comparing Pre injured jumps and Post injured jumps 
-g3 <- ggplot(mrsi1, aes(x = `Date`, y = `mRSI` )) + geom_point() 
-g4 <- ggplot(mrsi2, aes(x = `Date`, y = `mRSI`)) + geom_point() 
-grid.arrange(g3, g4, ncol = 2)
-
-mean(mrsi1$mRSI)
-mean(mrsi2$mRSI)
-# Means
-pre_means <- data.frame(colMeans(pre[sapply(pre, is.numeric)], na.rm = TRUE))
-pre_means <- pre_means %>%
-  rename(
-    pre_injury = colMeans.pre.sapply.pre..is.numeric....na.rm...TRUE.
-  )
-post_means <- data.frame(colMeans(post[sapply(post, is.numeric)], na.rm = TRUE))
-post_means <- post_means %>%
-  rename(
-    post_means = colMeans.post.sapply.post..is.numeric....na.rm...TRUE.
-  )
-premeans_transposed <- t(pre_means)
-postmeans_transposed <- t(post_means)
-
-means <- data.frame(merged_df <- rbind(premeans_transposed, postmeans_transposed))
-```
 
 ```{r,pressure, echo=FALSE}
 ##### plotting means 
-g10 <- ggplot(means, aes(x = ""))
+g10 <- ggplot(pre, aes(x = `Date`, y = `Peak.Braking.Force`, color = athlete_code )) + geom_point() 
+g11 <- ggplot(post, aes(x = `Date`, y = `Peak.Braking.Force`)) + geom_point() 
+grid.arrange(g10, g11, ncol = 2)
+g10
+
+file_path3 <- "~/Downloads/pre.csv"
+write.csv(pre, file_path3, row.names = FALSE)
 ```
